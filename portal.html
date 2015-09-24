@@ -20,6 +20,10 @@
             var imgWidth = mainPic.naturalWidth;
             var imgHeight = mainPic.naturalHeight;
 
+            main.style.width = currentWidth + "px";
+            main.style.height = currentHeight + "px";
+            main.style.display = "block";
+
             var raw = imgWidth/imgHeight;
             var now = currentWidth/currentHeight;
             var rat = 1;
@@ -35,14 +39,9 @@
                 rat = currentHeight/imgHeight;
 
                 var left = (imgWidth*rat-currentWidth)/2;
-                mainPic.style.left = -left + "px";
                 mainPic.style.height = currentHeight + "px";
-
+                window.scrollTo(left,0);
             }
-
-            main.style.width = currentWidth + "px";
-            main.style.height = currentHeight + "px";
-            main.style.display = "block";
         };
      </script>
 </body>
