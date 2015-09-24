@@ -2,52 +2,46 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Poker</title>
+        <title>Portal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <style type="text/css">
-	    .sun-img {
-    		position: absolute;
-	    }
-        </style>
-
     </head>
 <body>
-<div id="main" style="margin-top:-8px;margin-left:-8px;display:none">
-    <img id="main-pic" src="http://7xii35.com1.z0.glb.clouddn.com/hepai.png?imageView2/2/w/540/h/960/q/10" style="position:absolute">
+<div id="main" style="margin-top:-8px;margin-left:-8px;display:none;">
+    <img id="main-pic" src="http://7xii35.com1.z0.glb.clouddn.com/hepai.png?imageView2/2/w/540/h/960/q/10" style="position:auto;">
 </div>
     <script type="text/javascript">
         window.onload = function() {
             var currentWidth = screen.availWidth;
-     		var currentHeight = screen.availHeight;
+            var currentHeight = screen.availHeight;
 
             var main = document.getElementById("main");
             var mainPic = document.getElementById("main-pic");
 
-    		var imgWidth = mainPic.naturalWidth;
-    		var imgHeight = mainPic.naturalHeight;
+            var imgWidth = mainPic.naturalWidth;
+            var imgHeight = mainPic.naturalHeight;
 
-    		var raw= imgWidth/imgHeight;
-    		var now = currentWidth/currentHeight;
+            var raw = imgWidth/imgHeight;
+            var now = currentWidth/currentHeight;
             var rat = 1;
-    		if (now > raw) {
-    		    rat = currentWidth/imgWidth;
+            if (now > raw) {
+                rat = currentWidth/imgWidth;
 
-    		    var top = (imgHeight*rat-currentHeight)/2;
+                var top = (imgHeight*rat-currentHeight)/2;
 
-    		    mainPic.style.top = -top+"px";
-    	 	    mainPic.style.width = currentWidth+"px";
+                // mainPic.style.top = -top + "px";
+                mainPic.style.width = currentWidth + "px";
 
-    		} else {
-    		    rat = currentHeight/imgHeight;
+            } else {
+                rat = currentHeight/imgHeight;
 
-    		    var left = (imgWidth*rat-currentWidth)/2;
-    		    mainPic.style.left = -left+"px";
-    	 	    mainPic.style.height = currentHeight+"px";
+                var left = (imgWidth*rat-currentWidth)/2;
+                mainPic.style.left = -left + "px";
+                mainPic.style.height = currentHeight + "px";
 
-    		}
+            }
 
-    		main.style.width = currentWidth+"px";
-    		main.style.height = currentHeight+"px";
+            main.style.width = currentWidth + "px";
+            main.style.height = currentHeight + "px";
             main.style.display = "block";
         };
      </script>
